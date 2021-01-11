@@ -14,8 +14,9 @@ puts 'creating new flats'
 6.times do
   Flat.create!(
     name: Faker::Games::Fallout.location,
-    address: Faker::Address.full_address,
-    description: Faker::Lorem.paragraph_by_chars(number: 30, supplemental: false),
+    address: Faker::Address.street_address,
+    picture_url: 'https://picsum.photos/900/600',
+    description: Faker::Lorem.paragraph_by_chars(number: 330, supplemental: false),
     price_per_night: rand(50..150),
     number_of_guests: rand(1..4)
   )

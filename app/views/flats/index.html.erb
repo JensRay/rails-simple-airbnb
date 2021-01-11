@@ -1,16 +1,25 @@
-<div class="container">
+<div class="container mt-3">
   <h1>All our flats (<%= @flats.count %>)</h1>
-  <div class="row d-flex">
+  <div class="row d-flex justify-content-between">
     <% @flats.each do |flat| %>
-      <div class="card col-3 m-3 p-4">
-        <div>
-          <h3><%= flat.name %></h3>
-          <p><%= flat.address %></p>
-          <span><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %> <i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></span>
+      <div class="card col-5 mx-4 mb-3">
+        <div><img src="<%= flat.picture_url %>" alt="apartment"></div>
+
+        <div class=" card">
+          <h3 class="mt-3 mx-3"><%= flat.name %></h3>
+          <p class="mx-3"><%= flat.address %></p>
+          <div class="mx-3 mb-2">
+            <span class="mr-2"><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></span>
+            <span><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></span>
+          </div>
         </div>
-        <div class="card-buttom"> <%= link_to 'More info', flat_path(flat) %></div>
-        <%= link_to 'Edit', edit_flat_path(flat) %>
-        <%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+        <div class="d-flex align-items-center my-2">
+          <span class="mx-3"><%= link_to 'More info', flat_path(flat) %></span>
+          <span class="text-warning mx-3"><%= link_to 'Edit', edit_flat_path(flat), id: "yellow"  %></span>
+          <span class="text-alert mx-3"><%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-alert", id: "red" %></span>
+        </div>
+
       </div>
     <% end %>
 

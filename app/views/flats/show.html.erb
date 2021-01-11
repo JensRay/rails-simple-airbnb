@@ -1,28 +1,49 @@
-<div>
-  <h1><%= @flat.name %></h1>
-  <h4><%= @flat.address %></h2>
-</div>
+<div class="map" style="background-image: url('<%= @flat.picture_url %>')"></div>
 
-<div>
-  <h3>A bit more about this flat...</h3>
-  <p> <%= @flat.description %> </p>
-</div>
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="lightgray card mb-3 p-3" >
+        <h1 class="font-weight-bold"><%= @flat.name %></h1>
+        <h4><%= @flat.address %></h2>
+      </div>
 
-<div>
-  <h4>Book this place!</h4>
+      <div class="lightgray card mb-3 p-3">
+        <h3 class="font-weight-bold">A bit more about this flat...</h3>
+        <p> <%= @flat.description %> </p>
+      </div>
+    </div>
 
+    <div class="col-4">
+      <div class="lightgray card mb-3 p-3">
+        <h4>Book this place!</h4>
+         <form action="">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
 
-</div>
+      <div class="lightgray card mb-3 p-3">
+        <h2>Details</h2>
+        <span><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %> <i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %></span>
+      </div>
 
-<div>
-  <h2>Details</h2>
-  <span><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %> <i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %></span>
-</div>
-
-<div>
-  Share
-  <i class="fab fa-facebook-square"></i>
-  <i class="fab fa-twitter-square"></i>
-  <i class="fab fa-pinterest-square"></i>
-  <i class="fas fa-envelope-square"></i>
+      <div class="lightgray card p-3">
+        <ul class="list-unstyled d-flex justify-content-end align-items-center mb-0">
+          <li class="mr-auto">Share</li>
+          <li><i class="fab fa-facebook-square px-1"></i></li>
+          <li><i class="fab fa-twitter-square px-1"></i></li>
+          <li><i class="fab fa-pinterest-square px-1"></i></li>
+          <li><i class="fas fa-envelope-square px-1"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
