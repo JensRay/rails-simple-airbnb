@@ -1,2 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
+@import 'show';
+
+
+body {
+  background-color: white;
+}
+
+.card {
+  background-color: rgb(248, 249, 250);
+}
+
+.card-buttom {
+  background-color: white;
+}
