@@ -3,12 +3,15 @@
   <div class="row d-flex">
     <% @flats.each do |flat| %>
       <div class="card col-3 m-3 p-4">
-        <h3><%= flat.name %></h3>
-        <p><%= flat.address %></p>
-        <span><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %> <i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></span>
-        <div class="card-buttom"></div> <%= link_to 'more info', flat_path(flat) %>
+        <div>
+          <h3><%= flat.name %></h3>
+          <p><%= flat.address %></p>
+          <span><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %> <i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></span>
+        </div>
+        <div class="card-buttom"> <%= link_to 'More info', flat_path(flat) %></div>
+        <%= link_to 'Edit', edit_flat_path(flat) %>
+        <%= link_to 'Remove', flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
-
     <% end %>
 
   </div>
